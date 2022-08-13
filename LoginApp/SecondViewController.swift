@@ -10,7 +10,7 @@ import UIKit
 class SecondViewController: UIViewController {
 
    
-    
+    // MARK: - UI Elements
    private var loginLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -46,6 +46,7 @@ class SecondViewController: UIViewController {
         return layer
     }()
     
+    // MARK: - Initializers
     init(login: String) {
         super.init(nibName: nil, bundle: nil)
         self.loginLabel.text = login
@@ -55,18 +56,16 @@ class SecondViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
         addSubviews()
         setupFrames()
         
         logOutButton.addTarget(self, action: #selector(backInLoginVC), for: .touchUpInside)
-  
     }
     
+    // MARK: - Private Methods
     private func addSubviews() {
         view.layer.addSublayer(gradientLayer)
         view.addSubview(loginLabel)
@@ -85,15 +84,11 @@ class SecondViewController: UIViewController {
         logOutButton.center.x = view.center.x
         
         gradientLayer.frame = view.bounds
-        
     }
     
-    @objc func backInLoginVC() {
+    @objc private func backInLoginVC() {
         let vc = LoginViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-        
-//        vc.loginTextField.text = ""
-//        vc.passwordTextField.text = ""
     }
 }

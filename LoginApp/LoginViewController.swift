@@ -9,7 +9,9 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    let loginTextField: UITextField = {
+    // MARK: - UI Elements
+
+    private let loginTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
         textField.font = .boldSystemFont(ofSize: 20)
@@ -19,7 +21,7 @@ final class LoginViewController: UIViewController {
         return textField
     }()
     
-    let passwordTextField: UITextField = {
+    private let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
         textField.font = .boldSystemFont(ofSize: 20)
@@ -76,8 +78,13 @@ final class LoginViewController: UIViewController {
         
         registerKeyboardNotification()
     }
-
-
+    
+    // MARK: - Public methods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // MARK: - Private Methods
     private func addSubviews() {
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
@@ -98,8 +105,6 @@ final class LoginViewController: UIViewController {
         
         forgotUserNameButton.frame = CGRect(x: 30, y: loginButton.frame.maxY + 40, width: 150, height: 30)
         forgotPasswordButton.frame = CGRect(x: view.frame.maxX - 180, y: loginButton.frame.maxY + 40, width: 150, height: 30)
-        
-
     }
     
     @objc private func loginButtonDidTap() {
@@ -137,11 +142,7 @@ final class LoginViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
- 
-    func registerKeyboardNotification() {
+    private func registerKeyboardNotification() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification,
@@ -153,7 +154,7 @@ final class LoginViewController: UIViewController {
     }
     
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height - 200
@@ -161,7 +162,7 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
