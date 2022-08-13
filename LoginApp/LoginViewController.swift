@@ -71,10 +71,16 @@ final class LoginViewController: UIViewController {
         addSubviews()
         setupFrames()
         
-        loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+        loginButton.addTarget(self,
+                              action: #selector(loginButtonDidTap),
+                              for: .touchUpInside)
         
-        forgotUserNameButton.addTarget(self, action: #selector(forgotUserNameButtonPressed), for: .touchUpInside)
-        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonPressed), for: .touchUpInside)
+        forgotUserNameButton.addTarget(self,
+                                       action: #selector(forgotUserNameButtonPressed),
+                                       for: .touchUpInside)
+        forgotPasswordButton.addTarget(self,
+                                       action: #selector(forgotPasswordButtonPressed),
+                                       for: .touchUpInside)
         
         registerKeyboardNotification()
     }
@@ -97,14 +103,26 @@ final class LoginViewController: UIViewController {
         loginTextField.frame = CGRect(x: 0, y: 300, width: 300, height: 30)
         loginTextField.center.x = view.center.x
         
-        passwordTextField.frame = CGRect(x: 0, y: loginTextField.frame.maxY + 50, width: 300, height: 30)
+        passwordTextField.frame = CGRect(x: 0,
+                                         y: loginTextField.frame.maxY + 50,
+                                         width: 300,
+                                         height: 30)
         passwordTextField.center.x = view.center.x
         
-        loginButton.frame = CGRect(x: 0, y: passwordTextField.frame.maxY + 40 , width: 60, height: 30)
+        loginButton.frame = CGRect(x: 0,
+                                   y: passwordTextField.frame.maxY + 40 ,
+                                   width: 60,
+                                   height: 30)
         loginButton.center.x = view.center.x
         
-        forgotUserNameButton.frame = CGRect(x: 30, y: loginButton.frame.maxY + 40, width: 150, height: 30)
-        forgotPasswordButton.frame = CGRect(x: view.frame.maxX - 180, y: loginButton.frame.maxY + 40, width: 150, height: 30)
+        forgotUserNameButton.frame = CGRect(x: 30,
+                                            y: loginButton.frame.maxY + 40,
+                                            width: 150,
+                                            height: 30)
+        forgotPasswordButton.frame = CGRect(x: view.frame.maxX - 180,
+                                            y: loginButton.frame.maxY + 40,
+                                            width: 150,
+                                            height: 30)
     }
     
     @objc private func loginButtonDidTap() {
@@ -117,7 +135,9 @@ final class LoginViewController: UIViewController {
 //        vc.loginLabel.text = "Hi, \(loginTextField.text ?? "")"
     
         } else {
-            let alertController = UIAlertController(title: "Invalid login and password!", message: "Please, enter current login and password", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Invalid login and password!",
+                                                    message: "Please, enter current login and password",
+                                                    preferredStyle: .alert)
             let action = UIAlertAction(title: "ok", style: .default)
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
@@ -127,7 +147,9 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func forgotUserNameButtonPressed() {
-        let alertController = UIAlertController(title: "Oops!", message: "Your name is Bogdan", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Oops!",
+                                                message: "Your name is Bogdan",
+                                                preferredStyle: .alert)
         let action = UIAlertAction(title: "ok", style: .default)
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
@@ -136,7 +158,9 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func forgotPasswordButtonPressed() {
-        let alertController = UIAlertController(title: "Oops!", message: "Your password is qwerty123", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Oops!",
+                                                message: "Your password is qwerty123",
+                                                preferredStyle: .alert)
         let action = UIAlertAction(title: "ok", style: .default)
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)

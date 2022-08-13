@@ -62,7 +62,9 @@ class SecondViewController: UIViewController {
         addSubviews()
         setupFrames()
         
-        logOutButton.addTarget(self, action: #selector(backInLoginVC), for: .touchUpInside)
+        logOutButton.addTarget(self,
+                               action: #selector(backInLoginVC),
+                               for: .touchUpInside)
     }
     
     // MARK: - Private Methods
@@ -74,13 +76,16 @@ class SecondViewController: UIViewController {
     }
     
     private func setupFrames() {
-        loginLabel.frame = CGRect(x: 0, y: 240, width: 200, height: 40)
+        loginLabel.frame = CGRect(x: 0, y: 240,
+                                  width: 200, height: 40)
         loginLabel.center.x = view.center.x
         
-        smileLabel.frame = CGRect(x: 0, y: loginLabel.frame.maxY + 30, width: 60, height: 60)
+        smileLabel.frame = CGRect(x: 0, y: loginLabel.frame.maxY + 30,
+                                  width: 60, height: 60)
         smileLabel.center.x = view.center.x
         
-        logOutButton.frame = CGRect(x: 0, y: view.frame.maxY - 180, width: 100, height: 50)
+        logOutButton.frame = CGRect(x: 0, y: view.frame.maxY - 180,
+                                    width: 100, height: 50)
         logOutButton.center.x = view.center.x
         
         gradientLayer.frame = view.bounds
