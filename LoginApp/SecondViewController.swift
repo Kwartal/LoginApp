@@ -9,7 +9,6 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-   
     // MARK: - UI Elements
    private var loginLabel: UILabel = {
         let label = UILabel()

@@ -177,7 +177,6 @@ final class LoginViewController: UIViewController {
                                                 object: nil)
     }
     
-    
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
