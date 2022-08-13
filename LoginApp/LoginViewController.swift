@@ -73,6 +73,8 @@ final class LoginViewController: UIViewController {
         
         forgotUserNameButton.addTarget(self, action: #selector(forgotUserNameButtonPressed), for: .touchUpInside)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonPressed), for: .touchUpInside)
+        
+        registerKeyboardNotification()
     }
 
 
@@ -97,25 +99,25 @@ final class LoginViewController: UIViewController {
         forgotUserNameButton.frame = CGRect(x: 30, y: loginButton.frame.maxY + 40, width: 150, height: 30)
         forgotPasswordButton.frame = CGRect(x: view.frame.maxX - 180, y: loginButton.frame.maxY + 40, width: 150, height: 30)
         
-        
+
     }
     
     @objc private func loginButtonDidTap() {
-//        if loginTextField.text == "Bogdan" && passwordTextField.text == "qwerty123" {
+        if loginTextField.text == "Bogdan" && passwordTextField.text == "qwerty123" {
         let vc = SecondViewController(login: "Welcome , \(loginTextField.text ?? "")")
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
 
-//            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
 //        vc.loginLabel.text = "Hi, \(loginTextField.text ?? "")"
     
-//        } else {
-//            let alertController = UIAlertController(title: "Invalid login and password!", message: "Please, enter current login and password", preferredStyle: .alert)
-//            let action = UIAlertAction(title: "ok", style: .default)
-//            alertController.addAction(action)
-//            present(alertController, animated: true, completion: nil)
-//
-//        }
+        } else {
+            let alertController = UIAlertController(title: "Invalid login and password!", message: "Please, enter current login and password", preferredStyle: .alert)
+            let action = UIAlertAction(title: "ok", style: .default)
+            alertController.addAction(action)
+            present(alertController, animated: true, completion: nil)
+
+        }
         
     }
     
@@ -136,9 +138,33 @@ final class LoginViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+ 
+    func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+         NotificationCenter.default.addObserver(self,
+                                                selector: #selector(keyboardWillHide),
+                                                name: UIResponder.keyboardWillHideNotification,
+                                                object: nil)
     }
     
     
-}
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height - 200
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
 
+}
