@@ -91,8 +91,6 @@ class SecondViewController: UIViewController {
     }
     
     @objc private func backInLoginVC() {
-        let vc = LoginViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        dismiss(animated: true)
     }
 }

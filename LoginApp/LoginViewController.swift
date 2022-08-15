@@ -11,7 +11,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - UI Elements
 
-    private let loginTextField: UITextField = {
+    private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
         textField.font = .boldSystemFont(ofSize: 20)
@@ -21,7 +21,7 @@ final class LoginViewController: UIViewController {
         return textField
     }()
     
-    private let passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
         textField.font = .boldSystemFont(ofSize: 20)
@@ -30,7 +30,6 @@ final class LoginViewController: UIViewController {
         textField.textAlignment = .left
         textField.autocapitalizationType = .none
         textField.isSecureTextEntry = true
-        
         return textField
     }()
     
@@ -54,7 +53,7 @@ final class LoginViewController: UIViewController {
     
     private let forgotPasswordButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Forgot User Name?", for: .normal)
+        button.setTitle("Forgot Password?", for: .normal)
         button.setTitleColor(.link, for: .normal)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.font = .systemFont(ofSize: 14)
@@ -129,7 +128,10 @@ final class LoginViewController: UIViewController {
         if loginTextField.text == "Bogdan" && passwordTextField.text == "qwerty123" {
         let vc = SecondViewController(login: "Welcome , \(loginTextField.text ?? "")")
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+            present(vc, animated: true) {
+                self.loginTextField.text = ""
+                self.passwordTextField.text = ""
+            }
 
             navigationController?.pushViewController(vc, animated: true)
 //        vc.loginLabel.text = "Hi, \(loginTextField.text ?? "")"
