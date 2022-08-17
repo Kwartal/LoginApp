@@ -21,6 +21,7 @@ final class ProfileViewController: UIViewController {
     private lazy var profileImageView = UIImageView()
     private lazy var separatorView = UIView()
     private lazy var backButton = UIButton()
+    private lazy var secondSeparatorView = UIView()
     
     init(user: User) {
         self.user = user
@@ -42,7 +43,10 @@ final class ProfileViewController: UIViewController {
     private func configure(with user: User) {
         nameLabel.text = user.characteristic.name
         surnameLabel.text = user.characteristic.surname
-        heightLabel.text = user.characteristic.height
+        heightLabel.text = "Рост: \(user.characteristic.height)"
+        weightLabel.text = "Вес: \(user.characteristic.weight)"
+        hobbyLabel.text = "Мои любимые хобби: \(user.characteristic.hobby)"
+        lastProfessionLabel.text = "Последнее место работы: \(user.characteristic.lastProfession)"
     }
     
     @objc func backButtonPressed() {
@@ -55,7 +59,7 @@ extension ProfileViewController {
     private func setupSubviews() {
         view.backgroundColor = .black
         
-        view.addSubviews(nameLabel, surnameLabel, hobbyLabel, lastProfessionLabel, heightLabel, weightLabel, profileImageView, separatorView, heightLabel, backButton)
+        view.addSubviews(nameLabel, surnameLabel, hobbyLabel, lastProfessionLabel, heightLabel, weightLabel, profileImageView, separatorView, backButton, secondSeparatorView)
         
         profileImageView.image = UIImage(named: user.characteristic.photoImageName)
         profileImageView.clipsToBounds = true
@@ -72,7 +76,10 @@ extension ProfileViewController {
 
         backButton.setImage(largeBoldDoc, for: .normal)
         
+        secondSeparatorView.backgroundColor = .white
         
+        hobbyLabel.numberOfLines = 0
+        lastProfessionLabel.numberOfLines = 0
         
                 
     }
@@ -104,15 +111,37 @@ extension ProfileViewController {
         
         heightLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.top.equalTo(separatorView.snp.bottom).offset(8)
+            $0.top.equalTo(separatorView.snp.bottom).offset(36)
+        }
+        
+        weightLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.top.equalTo(heightLabel.snp.bottom).offset(8)
         }
         
         backButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(13)
             $0.top.equalToSuperview().offset(44)
-//            $0.size.equalTo(28)
-
         }
+        
+        secondSeparatorView.snp.makeConstraints {
+            $0.height.equalTo(1)
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(weightLabel.snp.bottom).offset(38)
+        }
+        
+        lastProfessionLabel.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(secondSeparatorView.snp.bottom).offset(36)
+        }
+        
+        hobbyLabel.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(lastProfessionLabel.snp.bottom).offset(8)
+        }
+        
+        
+        
         
         
         //               titleLabel.snp.makeConstraints {
