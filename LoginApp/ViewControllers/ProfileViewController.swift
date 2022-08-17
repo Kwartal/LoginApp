@@ -86,7 +86,7 @@ extension ProfileViewController {
     
     private func configureConstraints() {
         profileImageView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(16) //левая часть относительно вью прикрепляется от вью на 16
+            $0.leading.equalToSuperview().offset(16)
             $0.top.equalToSuperview().offset(106)
             $0.size.equalTo(150)
         }
