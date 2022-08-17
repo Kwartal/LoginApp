@@ -197,7 +197,7 @@ final class LoginViewController: UIViewController {
             UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
         }
         
-        private func checkUserCredentials() {
+        func checkUserCredentials() {
             let login = UserDefaults.standard.string(forKey: "login") ?? ""
             let password = UserDefaults.standard.string(forKey: "password") ?? ""
             if login == "Bogdan" && password == "qwerty123" {
