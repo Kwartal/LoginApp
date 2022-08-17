@@ -10,21 +10,22 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    
-    var navController = UINavigationController()
-    
+//    var window: UIWindow?
+//
+//    var navController = UINavigationController()
+//
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let viewController = LoginViewController()
-        navController = UINavigationController(rootViewController: viewController)
+//        let viewController = LoginViewController()
+//        navController = UINavigationController(rootViewController: viewController)
+//        
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = navController
+//        
+//        window?.backgroundColor = UIColor.white
+//        window?.makeKeyAndVisible()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navController
-        
-        window?.backgroundColor = UIColor.white
-        window?.makeKeyAndVisible()
         
         return true
     }

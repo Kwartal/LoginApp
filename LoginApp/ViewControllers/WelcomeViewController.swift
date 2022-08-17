@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  WelcomeViewController.swift
 //  LoginApp
 //
 //  Created by Богдан Баринов on 12.08.2022.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     // MARK: - UI Elements
-   private var loginLabel: UILabel = {
+    var loginLabel: UILabel = {
         let label = UILabel()
+        label.text = "ds"
         label.textColor = .white
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
@@ -46,25 +47,26 @@ class SecondViewController: UIViewController {
     }()
     
     // MARK: - Initializers
-    init(login: String) {
-        super.init(nibName: nil, bundle: nil)
-        self.loginLabel.text = login
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+//    init(login: String) {
+//        super.init(nibName: nil, bundle: nil)
+//        self.loginLabel.text = login
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
         setupFrames()
-        
+        addSubviews()
         logOutButton.addTarget(self,
                                action: #selector(backInLoginVC),
                                for: .touchUpInside)
+        
     }
+    
     
     // MARK: - Private Methods
     private func addSubviews() {
@@ -72,6 +74,7 @@ class SecondViewController: UIViewController {
         view.addSubview(loginLabel)
         view.addSubview(smileLabel)
         view.addSubview(logOutButton)
+
     }
     
     private func setupFrames() {
@@ -93,4 +96,19 @@ class SecondViewController: UIViewController {
     @objc private func backInLoginVC() {
         dismiss(animated: true)
     }
+    
+ 
+}
+
+extension WelcomeViewController : UITabBarControllerDelegate {
+    
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//            if let navigationController = viewController as? UINavigationController,
+//                navigationController.viewControllers.contains(where: { $0 is MoreViewController }) {
+//                //show pop up view
+//                return false
+//            } else  {
+//                return true
+//            }
+//        }
 }

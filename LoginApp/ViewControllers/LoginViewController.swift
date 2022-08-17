@@ -10,7 +10,10 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     // MARK: - UI Elements
-
+    
+    let login = "1"
+    let password = "1"
+    
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
@@ -65,7 +68,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        title = "firstVC"
+        title = "LoginView"
         
         addSubviews()
         setupFrames()
@@ -125,16 +128,19 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonDidTap() {
-        if loginTextField.text == "Bogdan" && passwordTextField.text == "qwerty123" {
-        let vc = SecondViewController(login: "Welcome , \(loginTextField.text ?? "")")
-        vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true) {
+        if loginTextField.text == login && passwordTextField.text == password {
+        let welcomeVC = WelcomeViewController()
+            welcomeVC.loginLabel.text = "Welcome, \(loginTextField.text ?? "")"
+        let vc = MainTabBarController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false) {
                 self.loginTextField.text = ""
                 self.passwordTextField.text = ""
+                
             }
 
-            navigationController?.pushViewController(vc, animated: true)
-//        vc.loginLabel.text = "Hi, \(loginTextField.text ?? "")"
+//            navigationController?.pushViewController(vc, animated: true)
+        
     
         } else {
             let alertController = UIAlertController(title: "Invalid login and password!",

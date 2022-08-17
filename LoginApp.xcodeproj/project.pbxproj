@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7172030328ABBA3A00AA1EDC /* Morinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030228ABBA3A00AA1EDC /* Morinfo.swift */; };
+		7172030528ABBB2500AA1EDC /* MorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030428ABBB2500AA1EDC /* MorInfoViewController.swift */; };
+		7172030928AC2BED00AA1EDC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030828AC2BED00AA1EDC /* MainTabBarController.swift */; };
+		7172030B28AC45D300AA1EDC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030A28AC45D300AA1EDC /* ProfileViewController.swift */; };
 		719F1BC728A66E7B00446989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1BC628A66E7B00446989 /* AppDelegate.swift */; };
 		719F1BC928A66E7B00446989 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1BC828A66E7B00446989 /* SceneDelegate.swift */; };
 		719F1BCB28A66E7B00446989 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1BCA28A66E7B00446989 /* LoginViewController.swift */; };
 		719F1BD028A66E7B00446989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719F1BCF28A66E7B00446989 /* Assets.xcassets */; };
 		719F1BD328A66E7B00446989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719F1BD128A66E7B00446989 /* LaunchScreen.storyboard */; };
-		719F1BDD28A68BC600446989 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1BDC28A68BC600446989 /* SecondViewController.swift */; };
+		719F1BDD28A68BC600446989 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1BDC28A68BC600446989 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7172030228ABBA3A00AA1EDC /* Morinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Morinfo.swift; sourceTree = "<group>"; };
+		7172030428ABBB2500AA1EDC /* MorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorInfoViewController.swift; sourceTree = "<group>"; };
+		7172030828AC2BED00AA1EDC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		7172030A28AC45D300AA1EDC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		719F1BC328A66E7B00446989 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719F1BC628A66E7B00446989 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719F1BC828A66E7B00446989 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -23,7 +31,7 @@
 		719F1BCF28A66E7B00446989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		719F1BD228A66E7B00446989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		719F1BD428A66E7B00446989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		719F1BDC28A68BC600446989 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		719F1BDC28A68BC600446989 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		717202FF28ABB96800AA1EDC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				719F1BCA28A66E7B00446989 /* LoginViewController.swift */,
+				719F1BDC28A68BC600446989 /* WelcomeViewController.swift */,
+				7172030828AC2BED00AA1EDC /* MainTabBarController.swift */,
+				7172030428ABBB2500AA1EDC /* MorInfoViewController.swift */,
+				7172030A28AC45D300AA1EDC /* ProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7172030028ABB98800AA1EDC /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				719F1BC628A66E7B00446989 /* AppDelegate.swift */,
+				719F1BC828A66E7B00446989 /* SceneDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		7172030128ABB9CB00AA1EDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7172030228ABBA3A00AA1EDC /* Morinfo.swift */,
+			);
+			name = Models;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		719F1BBA28A66E7B00446989 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +94,9 @@
 		719F1BC528A66E7B00446989 /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				719F1BC628A66E7B00446989 /* AppDelegate.swift */,
-				719F1BC828A66E7B00446989 /* SceneDelegate.swift */,
-				719F1BCA28A66E7B00446989 /* LoginViewController.swift */,
-				719F1BDC28A68BC600446989 /* SecondViewController.swift */,
+				7172030028ABB98800AA1EDC /* SupportFiles */,
+				717202FF28ABB96800AA1EDC /* ViewControllers */,
+				7172030128ABB9CB00AA1EDC /* Models */,
 				719F1BCF28A66E7B00446989 /* Assets.xcassets */,
 				719F1BD128A66E7B00446989 /* LaunchScreen.storyboard */,
 				719F1BD428A66E7B00446989 /* Info.plist */,
@@ -137,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				719F1BDD28A68BC600446989 /* SecondViewController.swift in Sources */,
+				7172030528ABBB2500AA1EDC /* MorInfoViewController.swift in Sources */,
+				719F1BDD28A68BC600446989 /* WelcomeViewController.swift in Sources */,
+				7172030328ABBA3A00AA1EDC /* Morinfo.swift in Sources */,
+				7172030928AC2BED00AA1EDC /* MainTabBarController.swift in Sources */,
 				719F1BCB28A66E7B00446989 /* LoginViewController.swift in Sources */,
 				719F1BC728A66E7B00446989 /* AppDelegate.swift in Sources */,
+				7172030B28AC45D300AA1EDC /* ProfileViewController.swift in Sources */,
 				719F1BC928A66E7B00446989 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
