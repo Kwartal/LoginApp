@@ -9,9 +9,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    // MARK: - UI Elements
     var textWelcomeVC = "2"
     
-    // MARK: - UI Elements
     var loginLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -46,17 +46,7 @@ class WelcomeViewController: UIViewController {
                         UIColor.systemBlue.cgColor]
         return layer
     }()
-    
-    // MARK: - Initializers
-//    init(login: String) {
-//        super.init(nibName: nil, bundle: nil)
-//        self.loginLabel.text = login
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
+  
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +58,6 @@ class WelcomeViewController: UIViewController {
         loginLabel.text = textWelcomeVC
         
     }
-    
     
     // MARK: - Private Methods
     private func addSubviews() {

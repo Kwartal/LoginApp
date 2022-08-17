@@ -10,8 +10,6 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     // MARK: - UI Elements
-    let login = "1"
-    
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
@@ -33,7 +31,7 @@ final class LoginViewController: UIViewController {
         textField.isSecureTextEntry = true
         return textField
     }()
-    
+    ds
     private let loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Log In", for: .normal)

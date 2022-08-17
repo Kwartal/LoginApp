@@ -10,6 +10,7 @@ import SnapKit
 
 final class ProfileViewController: UIViewController {
     
+    // MARK: - UI Elements
     private var user: User
     
     private lazy var nameLabel = UILabel(font: .systemFont(ofSize: 24, weight: .semibold))
@@ -54,6 +55,7 @@ final class ProfileViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
 extension ProfileViewController {
     
     private func setupSubviews() {
@@ -71,20 +73,18 @@ extension ProfileViewController {
         backButton.tintColor = .white
         
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 28, weight: .regular, scale: .default)
-               
+        
         let largeBoldDoc = UIImage(systemName: "chevron.backward", withConfiguration: largeConfig)
-
+        
         backButton.setImage(largeBoldDoc, for: .normal)
         
         secondSeparatorView.backgroundColor = .white
         
         hobbyLabel.numberOfLines = 0
         lastProfessionLabel.numberOfLines = 0
-        
-                
     }
+    
     private func configureConstraints() {
-        
         profileImageView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16) //левая часть относительно вью прикрепляется от вью на 16
             $0.top.equalToSuperview().offset(106)
@@ -139,77 +139,6 @@ extension ProfileViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.top.equalTo(lastProfessionLabel.snp.bottom).offset(8)
         }
-        
-        
-        
-        
-        
-        //               titleLabel.snp.makeConstraints {
-        //                   $0.centerX.equalToSuperview()
-        //                   $0.top.equalToSuperview().offset(56)
-        //               }
-        //
-        //               menuItemImageView.snp.makeConstraints {
-        //                   $0.size.equalTo(100)
-        //                   $0.leading.equalToSuperview().offset(20)
-        //                   $0.top.equalTo(titleLabel.snp.bottom).offset(21)
-        //               }
-        //
-        //               menuItemTitleLabel.snp.makeConstraints {
-        //                   $0.leading.equalTo(menuItemImageView.snp.trailing).offset(16)
-        //                   $0.top.equalTo(titleLabel.snp.bottom).offset(25)
-        //               }
-        //
-        //               menuItemPricePerBaseAmount.snp.makeConstraints {
-        //                   $0.leading.equalTo(menuItemTitleLabel)
-        //                   $0.top.equalTo(menuItemTitleLabel.snp.bottom).offset(4)
-        //               }
-        //
-        //
-        //               separatorView.snp.makeConstraints {
-        //                   $0.leading.trailing.equalToSuperview()
-        //                   $0.top.equalTo(menuItemImageView.snp.bottom).offset(18)
-        //                   $0.height.equalTo(1)
-        //               }
-        //
-        //               estimatedCostTitleLabel.snp.makeConstraints {
-        //                   $0.leading.equalToSuperview().offset(20)
-        //                   $0.top.equalTo(separatorView.snp.bottom).offset(32)
-        //               }
-        //
-        //               estimatedCostValueLabel.snp.makeConstraints {
-        //                   $0.leading.equalTo(estimatedCostTitleLabel)
-        //                   $0.top.equalTo(estimatedCostTitleLabel.snp.bottom).offset(10)
-        //               }
-        //
-        //               specifyActualWeightLabel.snp.makeConstraints {
-        //                   $0.leading.equalTo(estimatedCostValueLabel)
-        //                   $0.top.equalTo(estimatedCostValueLabel.snp.bottom).offset(32)
-        //               }
-        //
-        //               whiteViewForTextEditing.snp.makeConstraints {
-        //                   $0.leading.trailing.equalToSuperview().inset(20)
-        //                   $0.top.equalTo(specifyActualWeightLabel.snp.bottom).offset(10)
-        //                   $0.height.equalTo(46)
-        //               }
-        //
-        //               measureTextLabel.snp.makeConstraints {
-        //                   $0.leading.trailing.equalTo(whiteViewForTextEditing).inset(16)
-        //                   $0.centerY.equalTo(whiteViewForTextEditing)
-        //               }
-        //
-        //               bottomContainerView.snp.makeConstraints {
-        //                   $0.height.equalTo(122)
-        //                   $0.bottom.equalToSuperview()
-        //                   $0.leading.trailing.equalToSuperview()
-        //               }
-        //
-        //               bottomOkButton.snp.makeConstraints {
-        //                   $0.leading.trailing.equalToSuperview().inset(16)
-        //                   $0.top.equalTo(bottomContainerView.snp.top).offset(32)
-        //               }
-        //           }
-        
     }
 }
 
