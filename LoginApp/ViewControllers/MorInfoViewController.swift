@@ -9,6 +9,8 @@ import UIKit
 
 class MorInfoViewController: UIViewController {
     
+    private let user1 = User.getUser()
+    
     private let morInfoButton: UIButton = {
         var button = UIButton()
         button.setTitle("Mor Info", for: .normal)
@@ -30,7 +32,6 @@ class MorInfoViewController: UIViewController {
         morInfoButton.addTarget(self,
                                 action: #selector(morInfoButtonDidTap),
                                 for: .touchUpInside)
-        
     }
     
     func addsubviews() {
@@ -44,7 +45,13 @@ class MorInfoViewController: UIViewController {
     }
     
     @objc func morInfoButtonDidTap() {
-        navigationController?.pushViewController(ProfileViewController(), animated: true)
+        
+        let vc = ProfileViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
+        
+//        navigationController?.pushViewController(ProfileViewController(), animated: true)
+        
     }
     
 }

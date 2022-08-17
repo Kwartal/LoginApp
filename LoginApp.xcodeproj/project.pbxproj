@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7172030328ABBA3A00AA1EDC /* Morinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030228ABBA3A00AA1EDC /* Morinfo.swift */; };
+		7172030328ABBA3A00AA1EDC /* More Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030228ABBA3A00AA1EDC /* More Info.swift */; };
 		7172030528ABBB2500AA1EDC /* MorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030428ABBB2500AA1EDC /* MorInfoViewController.swift */; };
 		7172030928AC2BED00AA1EDC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030828AC2BED00AA1EDC /* MainTabBarController.swift */; };
 		7172030B28AC45D300AA1EDC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030A28AC45D300AA1EDC /* ProfileViewController.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7172030228ABBA3A00AA1EDC /* Morinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Morinfo.swift; sourceTree = "<group>"; };
+		7172030228ABBA3A00AA1EDC /* More Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "More Info.swift"; sourceTree = "<group>"; };
 		7172030428ABBB2500AA1EDC /* MorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorInfoViewController.swift; sourceTree = "<group>"; };
 		7172030828AC2BED00AA1EDC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		7172030A28AC45D300AA1EDC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		7172030128ABB9CB00AA1EDC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7172030228ABBA3A00AA1EDC /* Morinfo.swift */,
+				7172030228ABBA3A00AA1EDC /* More Info.swift */,
 			);
 			name = Models;
 			path = ViewControllers;
@@ -176,7 +176,7 @@
 			files = (
 				7172030528ABBB2500AA1EDC /* MorInfoViewController.swift in Sources */,
 				719F1BDD28A68BC600446989 /* WelcomeViewController.swift in Sources */,
-				7172030328ABBA3A00AA1EDC /* Morinfo.swift in Sources */,
+				7172030328ABBA3A00AA1EDC /* More Info.swift in Sources */,
 				7172030928AC2BED00AA1EDC /* MainTabBarController.swift in Sources */,
 				719F1BCB28A66E7B00446989 /* LoginViewController.swift in Sources */,
 				719F1BC728A66E7B00446989 /* AppDelegate.swift in Sources */,

@@ -8,7 +8,10 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
+    
+    let loginVC = WelcomeViewController()
+    let profileVC = MorInfoViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +23,7 @@ class MainTabBarController: UITabBarController {
     
     
     private func configureVC() {
-        let loginVC = WelcomeViewController()
-        let profileVC = MorInfoViewController()
+
         
         let loginImageVC = UIImage(systemName: "person.fill") ?? UIImage()
         let welcomeImageVC = UIImage(systemName: "person.crop.circle.fill") ?? UIImage()

@@ -78,14 +78,18 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-//        
-//        nameLabel.text = user.characteristic.name
+        
+        nameLabel.text = user.characteristic.name
+        
+
+        
+
 //        surnameLabel.text = user.characteristic.surname
 //        fromLabel.text = user.characteristic.from
-////        hobbyLabel.text = user.characteristic.hobby
+//        hobbyLabel.text = user.characteristic.hobby
 //        lastProfessionLabel.text = user.characteristic.lastProfession
-////        heightLabel = user.characteristic.height
-////        weightLabel = user.characteristic.weight
+//        heightLabel.text = user.characteristic.height
+//        weightLabel.text = user.characteristic.weight
         
     }
     
@@ -95,5 +99,14 @@ class ProfileViewController: UIViewController {
 
     }
     
+    private func viewAddsubviews() {
+        view.addSubview(nameLabel)
+    }
+    
+    private func setupFrames() {
+        nameLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        nameLabel.center.x = view.center.x
+        nameLabel.center.y = view.center.y
+    }
 
 }

@@ -8,11 +8,12 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    
+    var textWelcomeVC = "2"
+    
     // MARK: - UI Elements
     var loginLabel: UILabel = {
         let label = UILabel()
-        label.text = "ds"
         label.textColor = .white
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
@@ -55,7 +56,7 @@ class WelcomeViewController: UIViewController {
 //    required init?(coder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
 //    }
-//    
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +65,7 @@ class WelcomeViewController: UIViewController {
         logOutButton.addTarget(self,
                                action: #selector(backInLoginVC),
                                for: .touchUpInside)
+        loginLabel.text = textWelcomeVC
         
     }
     

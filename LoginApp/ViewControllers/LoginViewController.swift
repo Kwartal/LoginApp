@@ -129,19 +129,18 @@ final class LoginViewController: UIViewController {
     
     @objc private func loginButtonDidTap() {
         if loginTextField.text == login && passwordTextField.text == password {
-        let welcomeVC = WelcomeViewController()
-            welcomeVC.loginLabel.text = "Welcome, \(loginTextField.text ?? "")"
-        let vc = MainTabBarController()
+            let vc = MainTabBarController()
+            vc.loginVC.textWelcomeVC = "Welcome, \(loginTextField.text ?? "")"
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: false) {
                 self.loginTextField.text = ""
                 self.passwordTextField.text = ""
                 
             }
-
-//            navigationController?.pushViewController(vc, animated: true)
-        
-    
+            
+            //            navigationController?.pushViewController(vc, animated: true)
+            
+            
         } else {
             let alertController = UIAlertController(title: "Invalid login and password!",
                                                     message: "Please, enter current login and password",
@@ -149,7 +148,7 @@ final class LoginViewController: UIViewController {
             let action = UIAlertAction(title: "ok", style: .default)
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
-
+            
         }
         
     }
@@ -179,10 +178,10 @@ final class LoginViewController: UIViewController {
                                                selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
-         NotificationCenter.default.addObserver(self,
-                                                selector: #selector(keyboardWillHide),
-                                                name: UIResponder.keyboardWillHideNotification,
-                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -198,5 +197,5 @@ final class LoginViewController: UIViewController {
             self.view.frame.origin.y = 0
         }
     }
-
+    
 }
