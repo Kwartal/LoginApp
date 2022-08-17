@@ -97,6 +97,8 @@ class WelcomeViewController: UIViewController {
     
     @objc private func backInLoginVC() {
         dismiss(animated: true)
+        UserDefaults.standard.removeObject(forKey: "login")
+        UserDefaults.standard.removeObject(forKey: "password")
     }
     
  

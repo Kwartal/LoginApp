@@ -10,9 +10,7 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     // MARK: - UI Elements
-    
     let login = "1"
-    let password = "1"
     
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
@@ -128,7 +126,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonDidTap() {
-        if loginTextField.text == login && passwordTextField.text == password {
+        if loginTextField.text == "Bogdan" && passwordTextField.text == "qwerty123" {
             let vc = MainTabBarController()
             vc.loginVC.textWelcomeVC = "Welcome, \(loginTextField.text ?? "")"
             vc.modalPresentationStyle = .fullScreen
@@ -198,4 +196,25 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    private func saveUserCredentials() {
+        if loginTextField.text?.count != nil {
+            UserDefaults.standard.set(loginTextField.text!, forKey: "login")
+        }
+        
+        if passwordTextField.text?.count != nil {
+            UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
+        }
+        
+    func checkUserCredentials() {
+            let login = UserDefaults.standard.string(forKey: "login") ?? ""
+            let password = UserDefaults.standard.string(forKey: "password") ?? ""
+            if login == "Bogdan" && password == "qwerty123" {
+                let vc = WelcomeViewController()
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true)
+            }
+        }
+        
+    }
 }
+

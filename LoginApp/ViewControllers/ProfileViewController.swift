@@ -57,7 +57,7 @@ final class ProfileViewController: UIViewController {
 extension ProfileViewController {
     
     private func setupSubviews() {
-        view.backgroundColor = .black
+        view.backgroundColor = .link.withAlphaComponent(0.4)
         
         view.addSubviews(nameLabel, surnameLabel, hobbyLabel, lastProfessionLabel, heightLabel, weightLabel, profileImageView, separatorView, backButton, secondSeparatorView)
         
