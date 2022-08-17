@@ -12,17 +12,10 @@ struct User {
     let password: String
     let characteristic: Person
     
-    static func getUser() -> User {
-        User(login: "1",
-             password: "1",
-             characteristic: Person(name: "Bogdan",
-                                            surname: "Barinov",
-                                            from: "Moscow",
-                                            hobby: "Sport and Music",
-                                            lastProfession: "Manager",
-                                            height: "186",
-                                            weight: "86")
-        )
+    init(login: String, password: String, characteristic: Person) {
+        self.login = login
+        self.password = password
+        self.characteristic = characteristic
     }
 }
 
@@ -34,4 +27,16 @@ struct Person {
     let lastProfession: String
     let height: String
     let weight: String
+    let photoImageName: String
+    
+    init(name: String, surname: String, from: String, hobby: String, lastProfession: String, height: String, weight: String, photoImageName: String) {
+        self.name = name
+        self.surname = surname
+        self.from = from
+        self.hobby = hobby
+        self.lastProfession = lastProfession
+        self.height = height
+        self.weight = weight
+        self.photoImageName = photoImageName
+    }
 }

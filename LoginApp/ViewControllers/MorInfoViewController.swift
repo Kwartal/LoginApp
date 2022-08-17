@@ -9,7 +9,6 @@ import UIKit
 
 class MorInfoViewController: UIViewController {
     
-    private let user1 = User.getUser()
     
     private let morInfoButton: UIButton = {
         var button = UIButton()
@@ -45,10 +44,11 @@ class MorInfoViewController: UIViewController {
     }
     
     @objc func morInfoButtonDidTap() {
-        
-        let vc = ProfileViewController()
+        let user = User(login: "1", password: "1", characteristic: Person(name: "Bogdan", surname: "Barinov", from: "Moscow", hobby: "Sport", lastProfession: "GachiMan", height: "186", weight: "86", photoImageName: "Image"))
+        let vc = ProfileViewController(user: user)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
+
         
 //        navigationController?.pushViewController(ProfileViewController(), animated: true)
         
