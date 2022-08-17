@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		714F748128AD915F00D2D5B0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F748028AD915F00D2D5B0 /* UIView.swift */; };
 		7172030328ABBA3A00AA1EDC /* More Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030228ABBA3A00AA1EDC /* More Info.swift */; };
 		7172030528ABBB2500AA1EDC /* MorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030428ABBB2500AA1EDC /* MorInfoViewController.swift */; };
 		7172030928AC2BED00AA1EDC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172030828AC2BED00AA1EDC /* MainTabBarController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		2A3FC2A58DF9C40C11AD01D0 /* Pods-LoginApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApp.release.xcconfig"; path = "Target Support Files/Pods-LoginApp/Pods-LoginApp.release.xcconfig"; sourceTree = "<group>"; };
 		62939DD6C5163EC65A6BAC5F /* Pods-LoginApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApp.debug.xcconfig"; path = "Target Support Files/Pods-LoginApp/Pods-LoginApp.debug.xcconfig"; sourceTree = "<group>"; };
+		714F748028AD915F00D2D5B0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7172030228ABBA3A00AA1EDC /* More Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "More Info.swift"; sourceTree = "<group>"; };
 		7172030428ABBB2500AA1EDC /* MorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorInfoViewController.swift; sourceTree = "<group>"; };
 		7172030828AC2BED00AA1EDC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 				62939DD6C5163EC65A6BAC5F /* Pods-LoginApp.debug.xcconfig */,
 				2A3FC2A58DF9C40C11AD01D0 /* Pods-LoginApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				7172030C28AD8D0500AA1EDC /* UILabel.swift */,
+				714F748028AD915F00D2D5B0 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -254,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714F748128AD915F00D2D5B0 /* UIView.swift in Sources */,
 				7172030528ABBB2500AA1EDC /* MorInfoViewController.swift in Sources */,
 				719F1BDD28A68BC600446989 /* WelcomeViewController.swift in Sources */,
 				7172030328ABBA3A00AA1EDC /* More Info.swift in Sources */,
