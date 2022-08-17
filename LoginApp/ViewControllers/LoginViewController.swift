@@ -31,7 +31,7 @@ final class LoginViewController: UIViewController {
         textField.isSecureTextEntry = true
         return textField
     }()
-    ds
+    
     private let loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Log In", for: .normal)
@@ -131,11 +131,7 @@ final class LoginViewController: UIViewController {
             present(vc, animated: false) {
                 self.loginTextField.text = ""
                 self.passwordTextField.text = ""
-                
             }
-            
-            //            navigationController?.pushViewController(vc, animated: true)
-            
             
         } else {
             let alertController = UIAlertController(title: "Invalid login and password!",
@@ -144,9 +140,7 @@ final class LoginViewController: UIViewController {
             let action = UIAlertAction(title: "ok", style: .default)
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
-            
         }
-        
     }
     
     @objc private func forgotUserNameButtonPressed() {
@@ -203,7 +197,7 @@ final class LoginViewController: UIViewController {
             UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
         }
         
-    func checkUserCredentials() {
+        private func checkUserCredentials() {
             let login = UserDefaults.standard.string(forKey: "login") ?? ""
             let password = UserDefaults.standard.string(forKey: "password") ?? ""
             if login == "Bogdan" && password == "qwerty123" {
@@ -212,7 +206,6 @@ final class LoginViewController: UIViewController {
                 present(vc, animated: true)
             }
         }
-        
     }
 }
 
