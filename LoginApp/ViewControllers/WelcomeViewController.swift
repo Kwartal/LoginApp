@@ -56,6 +56,7 @@ class WelcomeViewController: UIViewController {
                                action: #selector(backInLoginVC),
                                for: .touchUpInside)
         loginLabel.text = textWelcomeVC
+        print("privet5", textWelcomeVC)
         
     }
     
@@ -86,8 +87,8 @@ class WelcomeViewController: UIViewController {
     
     @objc private func backInLoginVC() {
         dismiss(animated: true)
-        UserDefaults.standard.removeObject(forKey: "login")
-        UserDefaults.standard.removeObject(forKey: "password")
+//        UserDefaults.standard.removeObject(forKey: "login")
+//        UserDefaults.standard.removeObject(forKey: "password")
     }
     
  

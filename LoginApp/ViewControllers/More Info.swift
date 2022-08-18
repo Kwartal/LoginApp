@@ -5,7 +5,7 @@
 //  Created by Богдан Баринов on 16.08.2022.
 //
 
-
+import Foundation
 
 struct User {
     let login: String
@@ -17,7 +17,11 @@ struct User {
         self.password = password
         self.characteristic = characteristic
     }
+    
+    static let mockUser = User(login: UserDefaults.standard.string(forKey: "login") ?? "", password: UserDefaults.standard.string(forKey: "password") ?? "", characteristic: Person(name: "Богдан", surname: "Баринов", from: "Москва", hobby: "Спорт, музыка, чтение", lastProfession: "Категорийный менеджер", height: "186", weight: "86", photoImageName: "Image"))
 }
+
+
 
 struct Person {
     let name: String

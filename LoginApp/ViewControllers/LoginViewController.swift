@@ -81,7 +81,20 @@ final class LoginViewController: UIViewController {
                                        for: .touchUpInside)
         
         registerKeyboardNotification()
+        loginTextField.text = UserDefaults.standard.string(forKey: "login")
+        passwordTextField.text = UserDefaults.standard.string(forKey: "password")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.checkUserCredentials()
+        }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        checkUserCredentials()
+    }
+    
+    
+    
     
     // MARK: - Public methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -125,13 +138,11 @@ final class LoginViewController: UIViewController {
     
     @objc private func loginButtonDidTap() {
         if loginTextField.text == "Bogdan" && passwordTextField.text == "qwerty123" {
+            saveUserCredentials()
             let vc = MainTabBarController()
             vc.loginVC.textWelcomeVC = "Welcome, \(loginTextField.text ?? "")"
             vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: false) {
-                self.loginTextField.text = ""
-                self.passwordTextField.text = ""
-            }
+            present(vc, animated: false)
             
         } else {
             let alertController = UIAlertController(title: "Invalid login and password!",
@@ -189,22 +200,28 @@ final class LoginViewController: UIViewController {
     }
     
     private func saveUserCredentials() {
+        print("privet")
         if loginTextField.text?.count != nil {
+            print("privet1")
             UserDefaults.standard.set(loginTextField.text!, forKey: "login")
         }
         
         if passwordTextField.text?.count != nil {
+            print("privet2")
+            
             UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
         }
-        
-        func checkUserCredentials() {
-            let login = UserDefaults.standard.string(forKey: "login") ?? ""
-            let password = UserDefaults.standard.string(forKey: "password") ?? ""
-            if login == "Bogdan" && password == "qwerty123" {
-                let vc = WelcomeViewController()
-                vc.modalPresentationStyle = .fullScreen
-                present(vc, animated: true)
-            }
+    }
+    
+    func checkUserCredentials() {
+        let login = UserDefaults.standard.string(forKey: "login") ?? ""
+        let password = UserDefaults.standard.string(forKey: "password") ?? ""
+        if login == "Bogdan" && password == "qwerty123" {
+            let vc = MainTabBarController()
+            vc.loginVC.textWelcomeVC = "Welcome, \(loginTextField.text ?? "")"
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false)
+            
         }
     }
 }
