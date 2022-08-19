@@ -43,7 +43,6 @@ class MorInfoViewController: UIViewController {
     }
     /// Не дожал с паролем и логином, пока оставлю так 
     @objc private func morInfoButtonDidTap() {
-
         UserDefaults.standard.string(forKey: "login")
         UserDefaults.standard.string(forKey: "password")
         let vc = ProfileViewController(user: .mockUser)
