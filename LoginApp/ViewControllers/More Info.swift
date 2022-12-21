@@ -18,7 +18,7 @@ struct User {
         self.characteristic = characteristic
     }
     
-    static let mockUser = User(login: UserDefaults.standard.string(forKey: "login") ?? "", password: UserDefaults.standard.string(forKey: "password") ?? "", characteristic: Person(name: "Богдан", surname: "Баринов", from: "Москва", hobby: "Спорт, музыка, чтение", lastProfession: "Категорийный менеджер", height: "186", weight: "86", photoImageName: "Image"))
+    static let mockUser = User(login: UserDefaults.standard.string(forKey: "login") ?? "", password: UserDefaults.standard.string(forKey: "password") ?? "", characteristic: Person(name: "Богдан", surname: "Баринов", from: "Москва", hobby: "Спорт, музыка, чтение", lastProfession: "IOS разработчик", height: "186", weight: "86", photoImageName: "Image"))
 }
 
 
