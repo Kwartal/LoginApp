@@ -142,7 +142,7 @@ final class LoginViewController: UIViewController {
             let vc = MainTabBarController()
             vc.loginVC.textWelcomeVC = "Welcome, \(loginTextField.text ?? "")"
             vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: false)
+            present(vc, animated: true)
             
         } else {
             let alertController = UIAlertController(title: "Invalid login and password!",

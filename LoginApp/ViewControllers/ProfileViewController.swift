@@ -90,7 +90,7 @@ extension ProfileViewController {
             $0.top.equalToSuperview().offset(106)
             $0.size.equalTo(150)
         }
-        // TODO: - Исправить хардкод
+        
         profileImageView.layer.cornerRadius = 150 / 2
         
         nameLabel.snp.makeConstraints {

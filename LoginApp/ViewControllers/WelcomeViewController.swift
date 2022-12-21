@@ -56,8 +56,6 @@ class WelcomeViewController: UIViewController {
                                action: #selector(backInLoginVC),
                                for: .touchUpInside)
         loginLabel.text = textWelcomeVC
-        print("privet5", textWelcomeVC)
-        
     }
     
     // MARK: - Private Methods
@@ -87,22 +85,8 @@ class WelcomeViewController: UIViewController {
     
     @objc private func backInLoginVC() {
         dismiss(animated: true)
-//        UserDefaults.standard.removeObject(forKey: "login")
-//        UserDefaults.standard.removeObject(forKey: "password")
+
     }
     
  
-}
-
-extension WelcomeViewController : UITabBarControllerDelegate {
-    
-//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//            if let navigationController = viewController as? UINavigationController,
-//                navigationController.viewControllers.contains(where: { $0 is MoreViewController }) {
-//                //show pop up view
-//                return false
-//            } else  {
-//                return true
-//            }
-//        }
 }

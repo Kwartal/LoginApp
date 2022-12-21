@@ -41,7 +41,7 @@ class MorInfoViewController: UIViewController {
         morInfoButton.center.x = view.center.x
         morInfoButton.center.y = view.center.y
     }
-    /// Не дожал с паролем и логином, пока оставлю так 
+    
     @objc private func morInfoButtonDidTap() {
         UserDefaults.standard.string(forKey: "login")
         UserDefaults.standard.string(forKey: "password")
